@@ -150,7 +150,7 @@ const App = () => {
         </Grid>
         <Grid item xs></Grid>
       </Grid>
-
+env: {process.env.NODE_ENV}
       <br />
       <br />
 
