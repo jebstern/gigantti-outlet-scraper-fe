@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const API_URL = process.env.NODE_ENV === "production" ? "gigantti-outlet-scraper-be.herokuapp.com/api/" : "http://localhost:3001/api/"
+const API_URL = process.env.NODE_ENV === "production" ? "https://gigantti-outlet-scraper-be.herokuapp.com/api/" : "http://localhost:3001/api/"
 
 const App = () => {
   const classes = useStyles();
