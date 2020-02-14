@@ -45,6 +45,8 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
+const API_URL = process.env.NODE_ENV === "production" ? "gigantti-outlet-scraper-be.herokuapp.com/api/" : "http://localhost:3001/api/"
+
 const App = () => {
   const classes = useStyles();
   const [data, setCount] = useState(createProductCategory);
@@ -56,7 +58,7 @@ const App = () => {
 
 
   useEffect(() => {
-    fetch(`http://localhost:3001/api/${category}`)
+    fetch(`${API_URL}${category}`)
       .then((data) => data.json())
       .then((res) => {
         setCount(res)
@@ -103,7 +105,7 @@ const App = () => {
           </TableHead>
           <TableBody>
             {output}
-            <TableRow><TableCell align="right">{ filtered.products.length } tuotetta</TableCell></TableRow>
+            <TableRow><TableCell align="left">{ filtered.products.length } tuotetta</TableCell></TableRow>
           </TableBody>
         </Table>
       </TableContainer>
@@ -150,14 +152,11 @@ const App = () => {
         </Grid>
         <Grid item xs></Grid>
       </Grid>
-env: {process.env.NODE_ENV}
       <br />
       <br />
-
-      <div className="container">
+      <div>
         { formatData() }
       </div>
-
   </Container>
   </div>
   )
