@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const API_URL = process.env.NODE_ENV === "production" ? "https://gigantti-outlet-scraper-be.herokuapp.com/api/" : "http://localhost:3001/api/"
+const API_URL = process.env.NODE_ENV === "production" ? "https://gigantti-outlet-scraper-be.herokuapp.com/api/" : "http://localhost:3000/api/"
 
 const App = () => {
   const classes = useStyles();
@@ -116,7 +116,7 @@ const App = () => {
     <div className={classes.container}>
     <Container maxWidth="xl">
       <Grid container spacing={3}>
-        <Grid item xs>
+        <Grid item xs={12} md={4} lg={3} xl={3}>
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="age-native-simple">Kategoria</InputLabel>
             <NativeSelect
@@ -128,14 +128,14 @@ const App = () => {
               <option value="aani">Ääni</option>
               <option value="tietokoneet">Tietokoneet</option>
               <option value="puhelimet">Puhelimet ja kellot</option>
-              <option>Kamera</option>
-              <option>Kodinkoneet</option>
-              <option>Pienkoneet</option>
-              <option>Pelit ja konsolit</option>
+              <option value="kamera">Kamera</option>
+              <option value="kodinkoneet">Kodinkoneet</option>
+              <option value="pienkoneet">Pienkoneet</option>
+              <option value="pelit">Pelit ja konsolit</option>
             </NativeSelect>
           </FormControl>
         </Grid>
-        <Grid item xs>
+        <Grid item xs={12} md={8} lg={5} xl={5}>
           <form className={classes.root} noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
@@ -150,7 +150,7 @@ const App = () => {
             />
           </form>
         </Grid>
-        <Grid item xs></Grid>
+        <Grid item lg={4} xl={4}></Grid>
       </Grid>
       <br />
       <br />
