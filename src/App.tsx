@@ -115,6 +115,7 @@ const App = () => {
   return (
     <div className={classes.container}>
     <Container maxWidth="xl">
+      <Grid item ><h1>This app uses static html for products! Gigantti no longer uses the same frontend content as before.</h1></Grid>
       <Grid container spacing={3}>
         <Grid item xs={12} md={4} lg={3} xl={3}>
           <FormControl className={classes.formControl}>
